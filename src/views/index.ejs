@@ -2,10 +2,23 @@
 <html>
   <head>
     <title>Dynamic Items</title>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/components.css" />
   </head>
   <body>
-    <input type="number" id="quantity" min="1" placeholder="Enter quantity" />
-    <div id="items"></div>
+    <div id="sidebar">
+      <div id="sidebar-content">
+        <div id="quantity-container">
+          <h1>Quantity</h1>
+          <input type="number" id="quantity" min="1" placeholder="Type here" />
+        </div>
+      </div>
+      <div id="obj1">OBJ1</div>
+    </div>
+    <div id="main-content">
+      <div id="items"></div>
+    </div>
+    <div id="obj3">OBJ3</div>
     <script src="/js/main.js"></script>
   </body>
 </html>
