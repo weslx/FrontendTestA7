@@ -1,16 +1,17 @@
 import express from "express";
 import router from "./routes/index.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
-app.use(express.static("public"));
-app.set("view engine", "ejs");
-app.set("views", "./src/views");
 
-app.use("/js", express.static("./public/js"));
-app.use("/css", express.static("./public/css"));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use("/", router);
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+app.listen(3000);
