@@ -1,0 +1,7 @@
+<ul>
+  <% if (items && items.length) { %> <% items.forEach(item => { %>
+  <li>Item <%= item %></li>
+  <% }); %> <% } else { %>
+  <li>No items available.</li>
+  <% } %>
+</ul>
